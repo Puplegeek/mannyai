@@ -40,12 +40,9 @@ This project simulates a simplified apparel production process with three sequen
 
 ## Dashboard
 
-![Gradio Dashboard](https://github.com/Puplegeek/mannyai/blob/master/diagrams/gradio%20version%20dashboard.png)
+![Gradio version dashboard](https://raw.githubusercontent.com/Puplegeek/mannyai/master/diagrams/gradio%20version%20dasboard.png)
 
 [Access the live Gradio demo here](https://huggingface.co/spaces/syedakash/Monte-Carlo-Scheduling)
-
-
-
 
 ---
 
