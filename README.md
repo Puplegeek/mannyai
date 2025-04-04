@@ -77,6 +77,7 @@ iii. Summary of lateness by order:
     - [Permutation Generator](#permutation-generator)
     - [Optimization Engine](#optimization-engine)
     - [Visualization Functions](#visualization-functions)
+    - [Visualization Functions](#gradio-ui)
 4. [Detailed Tables for Functions and Variables](#detailed-tables-for-functions-and-variables)
 5. [Usage](#usage)
 6. [License](#license)
@@ -340,6 +341,57 @@ Generates a pie chart showing the distribution of heuristics used during the sim
 
 ---
 
+## Gradio Interface Code Explanation
+
+The following explains the Gradio interface code that creates an interactive web UI for running the production scheduling simulation:
+
+- **`run_simulation` Function:**
+  - **Purpose:**  
+    Processes the uploaded CSV file and simulation parameters, runs the simulation, and prepares the results for display.
+  - **Steps:**
+    - **Seed Initialization:**  
+      Calls `set_seed(42)` to ensure reproducible simulation results.
+    - **Data Loading:**  
+      Reads the CSV file (using `pd.read_csv(file.name)`) and processes it with `load_data`.
+    - **Simulation Execution:**  
+      Calls `optimize_schedules` with the loaded data and simulation parameters (number of iterations, and the number of cutting, sewing, and packing machines) to obtain the best schedule.
+    - **Gantt Chart Generation:**  
+      Generates an extra Gantt chart image via `create_machine_timeline_image` to visualize machine utilization.
+    - **Result Formatting:**  
+      Returns a tuple with:
+        - The formatted count of on-time orders.
+        - The formatted average lateness.
+        - A lateness distribution chart.
+        - An optimization progress chart.
+        - A heuristic analysis chart.
+        - The Gantt chart image.
+
+- **Gradio Interface Setup (Using `gr.Blocks`):**
+  - **Theme and Styling:**  
+    The interface uses a soft theme (`gr.themes.Soft()`) and custom CSS to style numerical outputs.
+  - **Layout:**
+    - **Left Column (Configuration):**
+      - Contains input elements:
+        - Number inputs for setting the number of cutting tables, sewing machines, and packing stations.
+        - A file upload widget to upload the orders CSV.
+        - A slider to select the number of simulation iterations.
+        - A dropdown to select the simulation algorithm (only "Monte Carlo" is available).
+        - A button labeled "🚀 Start Simulation" to trigger the simulation.
+    - **Right Column (Results):**
+      - Displays output elements:
+        - Markdown elements for showing the number of on-time orders and average lateness.
+        - Tabs to display various charts:
+          - A chart for lateness distribution.
+          - A chart for optimization progress.
+          - A chart for heuristic analysis.
+          - An image (Gantt chart) showing machine utilization.
+  - **Event Binding:**
+    - The `run.click` method binds the "Start Simulation" button to the `run_simulation` function.
+    - When the button is clicked, the inputs are passed to `run_simulation` and the outputs (results and charts) are displayed in the corresponding UI components.
+  - **Launching the App:**
+    - The app is launched with `app.launch(inline=True, share=True)`, which starts the Gradio server and provides an option to share a public link.
+
+This code creates an interactive environment where users can upload their orders, configure simulation parameters, run the simulation, and view comprehensive visual results.
 
 
 ## Usage
