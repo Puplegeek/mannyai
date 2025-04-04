@@ -5,6 +5,39 @@ This project simulates a simplified apparel production process with three sequen
 
 ---
 
+## My Approach and Steps
+
+### Step 1 & 2: Prepare the Data and Machines
+- Loaded the order and machine data.
+- Structured the data for easy processing during simulation.
+
+### Step 3: Implement Forward Planning Logic
+- Modeled the manufacturing flow: **Cut → Sew → Pack**.
+- Incorporated machine setup times, delays, and dependencies between stages.
+
+### Step 4: Generate Order Permutations and Run Monte Carlo Simulations
+- Created multiple order sequences using heuristic methods.
+- Applied Monte Carlo simulations to evaluate different scheduling outcomes.
+
+### Step 5: Evaluate and Select Best Schedule
+- Compared simulation results based on:
+  - Number of on-time orders.
+  - Average lateness.
+- Selected the schedule with the best trade-off.
+
+### Step 6: Report Results
+- Summarized outcomes:
+  - Total orders completed on time.
+  - Average units of lateness.
+  - Detailed lateness by order.
+- Created basic visualizations for better interpretation.
+
+### Extra: Interactive Gradio App
+- Wrapped everything into a simple **Gradio UI**.
+- Allows for input tweaking and viewing simulation results interactively.
+
+---
+
 ## Dashboard
 
 ![Gradio Dashboard](https://github.com/Puplegeek/mannyai/blob/master/diagrams/gradio%20version%20dasboard.png "Gradio Version Dashboard")
