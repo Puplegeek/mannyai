@@ -434,9 +434,4 @@ The following explains the Gradio interface code that creates an interactive web
 This code creates an interactive environment where users can upload their orders, configure simulation parameters, run the simulation, and view comprehensive visual results.
 
 
-## Usage
 
-1. **Install Dependencies:**  
-   Ensure you have the necessary Python packages installed (e.g., `pandas`, `numpy`, `matplotlib`, `tqdm`):
-   ```bash
-   pip install -r requirements.txt
