@@ -119,9 +119,7 @@ iii. Summary of lateness by order:
     - [Visualization Functions](#visualization-functions)
     - [Gradio Interface](#gradio-ui)
 4. [Detailed Tables for Functions and Variables](#detailed-tables-for-functions-and-variables)
-5. [Usage](#usage)
-6. [License](#license)
-7. [Contact](#contact)
+
 
 ---
 
