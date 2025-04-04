@@ -117,7 +117,7 @@ iii. Summary of lateness by order:
     - [Permutation Generator](#permutation-generator)
     - [Optimization Engine](#optimization-engine)
     - [Visualization Functions](#visualization-functions)
-    - [Visualization Functions](#gradio-ui)
+    - [Gradio Interface](#gradio-ui)
 4. [Detailed Tables for Functions and Variables](#detailed-tables-for-functions-and-variables)
 5. [Usage](#usage)
 6. [License](#license)
